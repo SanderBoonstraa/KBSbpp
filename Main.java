@@ -8,7 +8,7 @@ public class Main {
         s.addStorage(a);
         s.addStorage(b);
 
-        s.getProducts();
+        s.getProductsHeight();
 
 
         AbstractScreen screen = new AbstractScreen();

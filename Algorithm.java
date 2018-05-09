@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public abstract class Algorithm {
-    public final static int boxSize = 100;
+    public final static int maxBoxSize = 100;
 
     protected ArrayList<ArrayList<Integer>> boxes;
 
@@ -10,6 +10,8 @@ public abstract class Algorithm {
     public Algorithm() {
         boxes = new ArrayList<>();
     }
+
+    protected abstract void calculate(int input);
 
     public void createNewBox(){
         ArrayList<Integer> box = new ArrayList<Integer>();
@@ -20,7 +22,17 @@ public abstract class Algorithm {
         return boxes;
     }
 
-    public void putPackageInBox(int packageHeight, ArrayList<Integer> box){
-        box.add(packageHeight);
+    public void putProductInBox(int productHeight, ArrayList<Integer> box){
+        box.add(productHeight);
     }
+
+    public int arraySum(ArrayList<Integer> box) {
+        int sum = 0;
+        for (int currentProduct : box) {
+            sum += currentProduct;
+        }
+        return sum;
+    }
+
+
 }
