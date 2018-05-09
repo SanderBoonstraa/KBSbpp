@@ -8,6 +8,7 @@ public class AbstractScreen extends JFrame implements ActionListener {
     private JButton jbSelecteerOrder;
 
     public AbstractScreen() {
+        //Hallo
         setTitle("Title");
         setSize(2000, 1000);
         setLayout(new FlowLayout());
