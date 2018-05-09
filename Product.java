@@ -8,4 +8,12 @@ public class Product {
         this.name=name;
         this.height=height;
     }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public String toString(){
+        return name + height;
+    }
 }
