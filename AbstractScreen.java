@@ -2,15 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Dimension;
 
 public class AbstractScreen extends JFrame implements ActionListener {
     private JButton jbStart;
     private JButton jbSelecteerOrder;
+    private JPanel boxContent;
 
     public AbstractScreen() {
-        //Hallo
         setTitle("Title");
         setSize(2000, 1000);
+        setMinimumSize(new Dimension(1500, 500));
         setLayout(new FlowLayout());
 
         jbSelecteerOrder = new JButton("Selecteer Order");
@@ -24,6 +26,9 @@ public class AbstractScreen extends JFrame implements ActionListener {
         jbStart = new JButton("Start");
         add(jbStart);
         jbStart.addActionListener(this);
+
+        DrawPanel k = new DrawPanel();
+
     }
 
 

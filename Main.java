@@ -11,7 +11,7 @@ public class Main {
         s.getProducts();
 
 
-        /*AbstractScreen screen = new AbstractScreen();
-        screen.setVisible(true);*/
+        AbstractScreen screen = new AbstractScreen();
+        screen.setVisible(true);
     }
 }
