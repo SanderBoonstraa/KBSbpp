@@ -11,9 +11,15 @@ public class Storage {
         products.add(product);
     }
 
-    public void getProducts(){
+    public void getProductsHeight(){
         for(Product product:products) {
             System.out.println(product.getHeight());
+        }
+    }
+
+    public void getProducts(){
+        for(Product product:products) {
+            System.out.println(product);
         }
     }
 }
