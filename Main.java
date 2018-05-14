@@ -1,14 +1,14 @@
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
-        Product a  = new Product("Kaas", 30);
-        Product b  = new Product("Sok",46);
 
-        Storage s = new Storage();
-        s.addStorage(a);
-        s.addStorage(b);
-
-        s.getProductsHeight();
+        NextFit nextFit = new NextFit();
+        for(int i = 0; i < 10; i++) {
+            String name = "Hoi " + i;
+            nextFit.calculate(new Product(name, 25 + i));
+        }
 
 
         /*AbstractScreen screen = new AbstractScreen();

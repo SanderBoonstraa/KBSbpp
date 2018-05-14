@@ -4,21 +4,29 @@ public class NextFit extends Algorithm {
 
     private int indexBox = 0;
     public NextFit() {
-        Algorithm.selectedAlgorithm = "FirstFit";
+        super();
+        Algorithm.selectedAlgorithm = "Next-Fit";
     }
 
-    protected void calculate(int input){
+    @Override
+    protected void calculate(Product product){
 
-        ArrayList<Integer> currentBox = boxes.get(indexBox);
+        Storage currentBox = boxes.get(boxes.size()-1);
+//        Storage currentBox = boxes.get(indexBox);
 
-        if(arraySum(currentBox) + input <= maxBoxSize){
-
-        } else if (input<= maxBoxSize){
+        if(currentBox.addProduct(product)) {
+            // DONE
+        } else {
             indexBox++;
-            createNewBox();
-
+            System.out.println("Box " + indexBox);
+            Storage newBox = createNewBox();
+            newBox.addProduct(product);
+            System.out.println(currentBox);
         }
+
     }
+
+
 
 
 }

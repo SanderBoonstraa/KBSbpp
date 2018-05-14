@@ -13,7 +13,10 @@ public class Product {
         return height;
     }
 
+    public String getName(){
+        return name;
+    }
     public String toString(){
-        return name + height;
+        return name +" " + height;
     }
 }

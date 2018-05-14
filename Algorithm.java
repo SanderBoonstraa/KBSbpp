@@ -3,35 +3,27 @@ import java.util.ArrayList;
 public abstract class Algorithm {
     public final static int maxBoxSize = 100;
 
-    protected ArrayList<ArrayList<Integer>> boxes;
+
+    protected ArrayList<Storage> boxes;
 
     public static String selectedAlgorithm = "";
 
     public Algorithm() {
-        boxes = new ArrayList<>();
+
+        boxes = new ArrayList<Storage>();
+        boxes.add(new Storage());
     }
 
-    protected abstract void calculate(int input);
+    protected abstract void calculate(Product input);
 
-    public void createNewBox(){
-        ArrayList<Integer> box = new ArrayList<Integer>();
+    public Storage createNewBox(){
+        Storage box = new Storage();
         boxes.add(box);
+        return box;
     }
 
-    public ArrayList<ArrayList<Integer>> getBoxes() {
+    public ArrayList<Storage> getBoxes(){
         return boxes;
-    }
-
-    public void putProductInBox(int productHeight, ArrayList<Integer> box){
-        box.add(productHeight);
-    }
-
-    public int arraySum(ArrayList<Integer> box) {
-        int sum = 0;
-        for (int currentProduct : box) {
-            sum += currentProduct;
-        }
-        return sum;
     }
 
 
