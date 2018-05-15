@@ -26,5 +26,8 @@ public abstract class Algorithm {
         return boxes;
     }
 
+    public void swapArrayList(ArrayList<Product> products){
+
+    }
 
 }
