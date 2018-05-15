@@ -65,19 +65,17 @@ public class Main {
 //        test.add(z);
 
 
-//        NextFit nextFit = new NextFit();
 //        ArrayList<Product> products = ProductGenerator.generateRandomProducts(5);
-//        for(int i = 0; i < products.size(); i++) {
-//            nextFit.calculate(products.get(i));
-//        }
+//        NextFit nextFit = new NextFit(products);
 
         System.out.println("-----------------------------------------------------");
-        FirstFit firstFit = new FirstFit();
         ArrayList<Product> products = ProductGenerator.generateRandomProducts(10);
-        for (int i = 0; i < products.size(); i++) {
-            firstFit.calculate(products.get(i));
-        }
-        ArrayList<Storage> boxes = firstFit.getBoxes();
+//        FirstFit firstFit = new FirstFit(products);
+//        firstFit.startCalculation();
+        FirstFitDecreasing firstFitDecreasing = new FirstFitDecreasing(products);
+        firstFitDecreasing.startCalculation();
+
+        ArrayList<Storage> boxes = firstFitDecreasing.getBoxes();
         for (Storage box : boxes) {
             System.out.println(box.toString());
 

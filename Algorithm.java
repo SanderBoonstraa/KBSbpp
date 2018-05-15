@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public abstract class Algorithm {
     public final static int maxBoxSize = 100;
@@ -13,6 +14,7 @@ public abstract class Algorithm {
         boxes = new ArrayList<Storage>();
         boxes.add(new Storage());
     }
+    protected abstract void startCalculation();
 
     protected abstract void calculate(Product input);
 
@@ -26,8 +28,5 @@ public abstract class Algorithm {
         return boxes;
     }
 
-    public void swapArrayList(ArrayList<Product> products){
-
-    }
 
 }

@@ -1,11 +1,18 @@
 import java.util.ArrayList;
 
 public class NextFit extends Algorithm {
+    private ArrayList<Product> products;
 
     private int indexBox = 0;
-    public NextFit() {
-        super();
+    public NextFit(ArrayList<Product> products) {
         Algorithm.selectedAlgorithm = "Next-Fit";
+        this.products= new ArrayList<Product>(products);
+    }
+
+    public void startCalculation(){
+        for(int i = 0; i < products.size(); i++) {
+            calculate(products.get(i));
+        }
     }
 
     @Override

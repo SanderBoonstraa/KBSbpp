@@ -3,11 +3,18 @@ import java.util.ArrayList;
 public class FirstFit extends Algorithm {
 
     private int indexBox = 0;
+    private ArrayList<Product> products;
 
-    public FirstFit() {
+    public FirstFit(ArrayList<Product> products) {
         Algorithm.selectedAlgorithm = "FirstFit";
+        this.products=new ArrayList<Product>(products);
     }
 
+    public void startCalculation(){
+        for(int i = 0; i < products.size(); i++) {
+            calculate(products.get(i));
+        }
+    }
     @Override
     protected void calculate(Product product) {
         //Working code
