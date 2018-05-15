@@ -15,7 +15,7 @@ public class NextFit extends Algorithm {
         }
     }
 
-    @Override
+
     protected void calculate(Product product){
 
         Storage currentBox = boxes.get(boxes.size()-1);

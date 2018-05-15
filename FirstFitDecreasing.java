@@ -3,37 +3,35 @@ import java.util.Collections;
 
 public class FirstFitDecreasing extends Algorithm {
     private ArrayList<Product> products;
+
+    private ArrayList<Product> sortedArray;
+
     public FirstFitDecreasing(ArrayList<Product> products) {
         Algorithm.selectedAlgorithm = "FirstFitDecreasing";
-        this.products=new ArrayList<Product>(products);
+        this.products = new ArrayList<Product>(products);
+        this.sortedArray = new ArrayList<Product>();
     }
 
-    public void startCalculation(){
-        Collections.sort(products, Collections.reverseOrder());
+    public void startCalculation() {
 
-        for(int i = 0; i < products.size(); i++) {
-            calculate(products.get(i));
-        }
-    }
-
-    @Override
-    protected void calculate(Product product) {
-        //Working code
-
-
-        boolean isStored = false;
-        for(Storage box: boxes) {
-            if(!isStored && box.addProduct(product)) {
-                isStored = true;
-                break;
+        if (products.size() > 0) {
+            //init the variable so no errors will be thrown.
+            Product HighestHeight = products.get(0);
+            for (Product product : products) {
+                if(product.getHeight() > HighestHeight.getHeight()) {
+                    HighestHeight = product;
+                }
             }
+            products.remove(HighestHeight);
+            sortedArray.add(HighestHeight);
+            startCalculation();
         }
 
-        //IF there is no place for storage in the old boxes create a new one
-        if(!isStored) {
-            Storage box = createNewBox();
-            box.addProduct(product);
-        }
+
+            FirstFit firstFit = new FirstFit(sortedArray);
+            firstFit.startCalculation();
+            this.boxes = firstFit.getBoxes();
+//            calculate(sortedArray.get(i));
     }
 
 }

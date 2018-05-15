@@ -16,7 +16,6 @@ public abstract class Algorithm {
     }
     protected abstract void startCalculation();
 
-    protected abstract void calculate(Product input);
 
     public Storage createNewBox(){
         Storage box = new Storage();

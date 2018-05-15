@@ -7,15 +7,15 @@ public class FirstFit extends Algorithm {
 
     public FirstFit(ArrayList<Product> products) {
         Algorithm.selectedAlgorithm = "FirstFit";
-        this.products=new ArrayList<Product>(products);
+        this.products= products;
     }
 
     public void startCalculation(){
-        for(int i = 0; i < products.size(); i++) {
+        for(int i = 0; i < products.size() - 1; i++) {
             calculate(products.get(i));
         }
     }
-    @Override
+
     protected void calculate(Product product) {
         //Working code
         boolean isStored = false;
