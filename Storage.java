@@ -20,11 +20,15 @@ public class Storage {
         return box;
     }
 
+    public boolean doesItFit(Product product) {
+        return (this.getCurrentCapacity() + product.getHeight()) <= MAXBOXSIZE;
+    }
+
     /**
      * Compare the added product against the current capacity
      */
     public boolean addProduct(Product product) {
-        if((this.getCurrentCapacity() + product.getHeight()) <= MAXBOXSIZE) {
+        if(doesItFit(product)) {
             this.box.add(product);
             return true;
         }
@@ -46,5 +50,6 @@ public class Storage {
 
         return toString + ": " +  getCurrentCapacity();
     }
+
 }
 

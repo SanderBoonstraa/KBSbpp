@@ -1,31 +1,22 @@
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<Product> test = new ArrayList<Product>();
+
+        AlgorithmTester algorithmTester = new AlgorithmTester();
+        algorithmTester.startWorstFit();
+        algorithmTester.printBoxes();
 
 
-//        ArrayList<Product> products = ProductGenerator.generateRandomProducts(5);
-//        NextFit nextFit = new NextFit(products);
+        JFrame frame = new JFrame("App");
+        App app = new App();
+        frame.setContentPane(app.mainFrame);
 
-        System.out.println("-----------------------------------------------------");
-        ArrayList<Product> products = ProductGenerator.generateRandomProducts(10);
-//        FirstFit firstFit = new FirstFit(products);
-//        firstFit.startCalculation();
-        FirstFitDecreasing firstFitDecreasing = new FirstFitDecreasing(products);
-        firstFitDecreasing.startCalculation();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
 
-        ArrayList<Storage> boxes = firstFitDecreasing.getBoxes();
-        System.out.println(boxes.size());
-        for (Storage box : boxes) {
-            System.out.println(box.toString());
-
-        }
-
-
-
-        /*AbstractScreen screen = new AbstractScreen();
-        screen.setVisible(true);*/
     }
 }

@@ -10,7 +10,7 @@ public class ProductGenerator
         ArrayList<Product> products = new ArrayList<>();
 
         for(int i = 0; i < countProducts; i++) {
-            int randomNum = ThreadLocalRandom.current().nextInt(1, 99 + 1);
+            int randomNum = ThreadLocalRandom.current().nextInt(1, 60 + 1);
             products.add(new Product("Kaas"+i, randomNum));
         }
 
